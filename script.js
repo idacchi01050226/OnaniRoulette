@@ -30,7 +30,9 @@ soundBtn.addEventListener('click', () => {
 });
 
 function spinSlots() {
+  // スタート時は背景を白に戻す
   document.body.classList.remove('rainbow-bg');
+
   // タイマークリア
   intervals.forEach(i => clearInterval(i));
   slots.forEach(s => s.classList.remove('win'));
@@ -51,9 +53,9 @@ function spinSlots() {
 
   // 停止タイミング（左→中→右）
   const delays = [
-    Math.random() * 1000 + 2000,
-    Math.random() * 2000 + 3000,
-    Math.random() * 3000 + 4000
+    Math.random() * 1000 + 2000, // 左 2〜3秒
+    Math.random() * 2000 + 3000, // 中 3〜5秒
+    Math.random() * 3000 + 4000  // 右 4〜7秒
   ];
 
   slots.forEach((slot, index) => {
@@ -72,7 +74,10 @@ function spinSlots() {
         randomSound.play();
       }
 
-      checkWin();
+      // 右スロットが停止したときだけ勝利判定
+      if(index === 2) {
+        checkWin();
+      }
 
     }, delays[index]);
   });
@@ -100,6 +105,5 @@ function checkWin() {
     document.body.classList.remove('rainbow-bg');
   }
 }
-
 
 startBtn.addEventListener('click', spinSlots);
