@@ -222,7 +222,7 @@ h2 {
   .slot.stopped { animation-duration: 380ms; }
   .slot.final { animation-duration: 520ms; }
 }
-/* オナニ率コンテナを中央揃えで横並び */
+
 /* オナニ率コンテナを中央揃えで横並び */
 .rate-container {
   display: flex;
@@ -234,8 +234,6 @@ h2 {
   width: 100%;             /* 横幅いっぱいにして中央に寄せる */
   max-width: 400px;        /* 必要に応じて幅を制限 */
 }
-
-
 
 #rateDisplay {
   font-size: 1.6em;
