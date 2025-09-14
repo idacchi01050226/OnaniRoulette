@@ -223,13 +223,19 @@ h2 {
   .slot.final { animation-duration: 520ms; }
 }
 /* オナニ率コンテナを中央揃えで横並び */
+/* オナニ率コンテナを中央揃えで横並び */
 .rate-container {
   display: flex;
-  justify-content: center; /* 中央に寄せる */
-  align-items: center;     /* 縦位置も中央揃え */
-  margin-top: 20px;
-  gap: 10px; /* 表示とボタンの間隔 */
+  justify-content: center; /* 子要素を横方向中央揃え */
+  align-items: center;     /* 縦方向中央揃え */
+  position: relative;      /* 絶対配置の干渉を避ける */
+  margin: 20px auto;       /* 上下マージンで間隔、左右自動で中央 */
+  gap: 10px;               /* 表示とボタンの間隔 */
+  width: 100%;             /* 横幅いっぱいにして中央に寄せる */
+  max-width: 400px;        /* 必要に応じて幅を制限 */
 }
+
+
 
 #rateDisplay {
   font-size: 1.6em;
@@ -238,3 +244,9 @@ h2 {
 #resetRateBtn {
    cursor: pointer;
 }
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* body の子要素を全部中央寄せ */
+}
+
