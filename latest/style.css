@@ -222,9 +222,19 @@ h2 {
   .slot.stopped { animation-duration: 380ms; }
   .slot.final { animation-duration: 520ms; }
 }
-/* オナニ率表示 */
-#rateDisplay {
-  margin-top: 37px;
-  font-size: 1.6em !important;
- }
+/* オナニ率コンテナを中央揃えで横並び */
+.rate-container {
+  display: flex;
+  justify-content: center; /* 中央に寄せる */
+  align-items: center;     /* 縦位置も中央揃え */
+  margin-top: 20px;
+  gap: 10px; /* 表示とボタンの間隔 */
+}
 
+#rateDisplay {
+  font-size: 1.6em;
+}
+
+#resetRateBtn {
+   cursor: pointer;
+}
